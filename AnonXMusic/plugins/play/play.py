@@ -32,15 +32,15 @@ from config import BANNED_USERS, lyrical
             "تشغيل",
             "شغل",
             "vplay",
-            "فديو",
             "cplay",
             "cvplay",
             "playforce",
             "vplayforce",
             "cplayforce",
             "cvplayforce",
-        ],""
+        ]
     )
+    & filters.group
     & ~BANNED_USERS
 )
 @PlayWrapper
