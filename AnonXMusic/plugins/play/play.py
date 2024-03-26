@@ -25,13 +25,13 @@ from AnonXMusic.utils.stream.stream import stream
 from config import BANNED_USERS, lyrical
 
 
-@app.on_message(filters.command(["/play","/vplay"], "")
+@app.on_message(filters.command(["تشغيل","فيديو"], "")
 )
 @app.on_message(
     filters.command( 
         [ 
-            "تشغيل", 
-            "فيديو",
+            "/play", 
+            "/vplay",
             "cplay", 
             "cvplay", 
             "playforce", 
@@ -118,11 +118,11 @@ async def play_commnd(
                 ext = video_telegram.file_name.split(".")[-1]
                 if ext.lower() not in formats:
                     return await mystic.edit_text(
-                        _["play_7"].format(f"{  |  .join(formats)}")
+                        _["play_7"].format(f"{' | '.join(formats)}")
                     )
             except:
                 return await mystic.edit_text(
-                    _["play_7"].format(f"{  |  .join(formats)}")
+                    _["play_7"].format(f"{' | '.join(formats)}")
                 )
         if video_telegram.file_size > config.TG_VIDEO_FILESIZE_LIMIT:
             return await mystic.edit_text(_["play_8"])
