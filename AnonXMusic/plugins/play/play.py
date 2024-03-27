@@ -31,8 +31,7 @@ from config import BANNED_USERS, lyrical
     filters.command( 
         [ 
             "/play", 
-            "/vplay",
-            "فيديو",            
+            "/vplay",           
             "cplay", 
             "cvplay", 
             "playforce", 
