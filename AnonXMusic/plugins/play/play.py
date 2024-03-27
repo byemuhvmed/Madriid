@@ -32,6 +32,7 @@ from config import BANNED_USERS, lyrical
         [ 
             "/play", 
             "/vplay",
+            "فيديو",            
             "cplay", 
             "cvplay", 
             "playforce", 
@@ -347,7 +348,7 @@ async def play_commnd(
                     _,
                     track_id,
                     user_id,
-                    "v" if video else "a",
+                    "v" if video else "ف",
                     "c" if channel else "g",
                     "f" if fplay else "d",
                 )
