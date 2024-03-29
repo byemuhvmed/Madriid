@@ -25,22 +25,20 @@ from AnonXMusic.utils.stream.stream import stream
 from config import BANNED_USERS, lyrical
 
 
-@app.on_message(filters.command(["تشغيل","شغل"], "")
-)
 @app.on_message(
-    filters.command( 
-        [ 
-            "/play", 
-            "/vplay",
-            "cplay", 
-            "cvplay", 
-            "playforce", 
-            "vplayforce", 
-            "cplayforce", 
-            "cvplayforce", 
-        ],
-        ""
+    filters.command(
+        [
+            "تشغيل",
+            "فيديو",
+            "cplay",
+            "cvplay",
+            "playforce",
+            "vplayforce",
+            "cplayforce",
+            "cvplayforce",
+        ],""
     )
+    & filters.group
     & ~BANNED_USERS
 )
 @PlayWrapper
@@ -62,8 +60,8 @@ async def play_commnd(
     slider = None
     plist_type = None
     spotify = None
-    user_id = message.from_user.id if message.from_user else "1121532100"
-    user_name = message.from_user.first_name if message.from_user else "None"
+    user_id = message.from_user.id
+    user_name = message.from_user.first_name
     audio_telegram = (
         (message.reply_to_message.audio or message.reply_to_message.voice)
         if message.reply_to_message
