@@ -27,16 +27,16 @@ chat = []
 async def azaan(c, msg):
   if msg.text == "تفعيل الاذان":
     if msg.chat.id in chat:
-      return await msg.reply_text("- الاذان متفعل اصلا يسطا")
+      return await msg.reply_text("- الاذان متفعل هنا من قبل 🥰♥️")
     else:
       chat.append(msg.chat.id)
-      return await msg.reply_text("تم تفعيل الاذان")
+      return await msg.reply_text("تم تفعيل الاذان ♥️🌿")
   elif msg.text == "تعطيل الاذان":
     if msg.chat.id in chat:
       chat.remove(msg.chat.id)
-      return await msg.reply_text("تم تعطيل الاذان")
+      return await msg.reply_text("تم تعطيل الاذان ♥️🌿")
     else:
-      return await msg.reply_text("- الاذان متعطله اصلا يسطا")
+      return await msg.reply_text("- الاذان متعطل هنا من قبل 🥰♥️")
       
 async def kill():
   for i in chat:
@@ -105,7 +105,7 @@ async def azkar():
      prayer = prayer_time()
      await kill()
      for i in chat:
-       await app.send_message(i, f"حان الان وقت اذان {prayer}")
+       await app.send_message(i, f"حان الان وقت اذان {prayer} بتوقيت القاهرة 🥰♥️")
        await play(i)
      await asyncio.sleep(174)
      await kill()
