@@ -15,7 +15,7 @@ from random import  choice, randint
 
 #          
                 
-@app.on_message(filters.command(["حمودي"‚"المطور"],"")
+@app.on_message(filters.command(["حمودي","المطور"],"")
 )
 async def huhh(client: Client, message: Message):
     await message.reply_photo(
