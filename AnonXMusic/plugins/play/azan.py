@@ -8,7 +8,6 @@ from datetime import datetime
 import requests
 from pytgcalls import PyTgCalls, StreamType
 from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped
-from AnonXMusic.core.call import anony
 from AnonXMusic.utils.database import *
 from pytgcalls.exceptions import (NoActiveGroupCall,TelegramServerError,AlreadyJoinedError)
 from pyrogram.errors import (
