@@ -6,8 +6,11 @@ from AnonXMusic import app
 import random
 from datetime import datetime
 import requests
+import pytz
+from AnonXMusic.core.call import anony
 from pytgcalls import PyTgCalls, StreamType
 from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped
+from AnonXMusic.core.call import anony
 from AnonXMusic.utils.database import *
 from pytgcalls.exceptions import (NoActiveGroupCall,TelegramServerError,AlreadyJoinedError)
 from pyrogram.errors import (
@@ -24,16 +27,16 @@ chat = []
 async def azaan(c, msg):
   if msg.text == "تفعيل الاذان":
     if msg.chat.id in chat:
-      return await msg.reply_text("- الاذان متفعل هنا من قبل 🥰♥️")
+      return await msg.reply_text("- الاذان متفعل اصلا يسطا")
     else:
       chat.append(msg.chat.id)
-      return await msg.reply_text("تم تفعيل الاذان ♥️🌿")
+      return await msg.reply_text("تم تفعيل الاذان")
   elif msg.text == "تعطيل الاذان":
     if msg.chat.id in chat:
       chat.remove(msg.chat.id)
-      return await msg.reply_text("تم تعطيل الاذان ♥️🌿")
+      return await msg.reply_text("تم تعطيل الاذان")
     else:
-      return await msg.reply_text("- الاذان متعطل هنا من قبل 🥰♥️")
+      return await msg.reply_text("- الاذان متعطله اصلا يسطا")
       
 async def kill():
   for i in chat:
@@ -102,7 +105,7 @@ async def azkar():
      prayer = prayer_time()
      await kill()
      for i in chat:
-       await app.send_message(i, f"حان الان وقت اذان {prayer} بتوقيت القاهرة 🥰♥️")
+       await app.send_message(i, f"حان الان وقت اذان {prayer}")
        await play(i)
      await asyncio.sleep(174)
      await kill()
