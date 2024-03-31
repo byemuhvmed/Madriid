@@ -9,8 +9,8 @@ import random
 from pyrogram import Client
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup
 from strings.filters import command
-from ZeMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
-from ZeMusic import app
+from AnonXMusic import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
+from AnonXMusic import app
 from random import  choice, randint
 
 #          
