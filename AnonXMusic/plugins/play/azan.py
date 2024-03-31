@@ -6,7 +6,6 @@ from AnonXMusic import app
 import random
 from datetime import datetime
 import requests
-from AnonXMusic.core.call import anony
 from pytgcalls import PyTgCalls, StreamType
 from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped
 from AnonXMusic.core.call import anony
