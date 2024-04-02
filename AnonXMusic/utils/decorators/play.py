@@ -31,18 +31,6 @@ def PlayWrapper(command):
     async def wrapper(client, message):
         language = await get_lang(message.chat.id)
         _ = get_string(language)
-        if message.sender_chat:
-            upl = InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton(
-                            text="ʜᴏᴡ ᴛᴏ ғɪx ?",
-                            callback_data="AnonymousAdmin",
-                        ),
-                    ]
-                ]
-            )
-            return await message.reply_text(_["general_3"], reply_markup=upl)
 
         if await is_maintenance() is False:
             if message.from_user.id not in SUDOERS:
@@ -99,7 +87,7 @@ def PlayWrapper(command):
                 else:
                     if message.from_user.id not in admins:
                         return await message.reply_text(_["play_4"])
-        if message.command[0][0] == "v":
+        if message.command[0][0] == "v" or message.command[0][0] == "ف":
             video = True
         else:
             if "-v" in message.text:
@@ -146,7 +134,7 @@ def PlayWrapper(command):
                             return await message.reply_text(_["call_1"])
                         except Exception as e:
                             return await message.reply_text(
-                                _["call_3"].format(app.mention, type(e).__name__)
+                                _["call_3"].format(app.menخtion, type(e).__name__)
                             )
 
                 if invitelink.startswith("https://t.me/+"):
