@@ -25,17 +25,17 @@ async def download_song(c,msg):
       duration = results[0]["duration"]
     except Exception as e:
       return await msg.edit(f'<b> حدث خطا :</b> \n {e}')
-    await x.edit('<b>يتم الارسال....</b>')  
+    await x.edit('<b>جاري الارسال....</b>')  
     with YoutubeDL(ydl_opts) as ytdl:
       ytdl_data = ytdl.extract_info(link,download=True)
       file_name = ytdl.prepare_filename(ytdl_data)
     
-    rep = f"<b>• {title}</b>\n<b>• powered by : @MH_BP</b>"
+    rep = f"<b> {title}</b>\n<b> powered by : @MH_BP</b>"
     secmul, dur, dur_arr = 1, 0, duration.split(":")
     for i in range(len(dur_arr) - 1, -1, -1):
         dur += int(dur_arr[i]) * secmul
         secmul *= 60
-    await x.edit("<b>جاري الارسال انتظر...</b>")
+    await x.edit("<b>*يتم الارسال*</b>")
     try:
       if msg.text.split()[0] == 'نزل':
         await app.send_audio(
