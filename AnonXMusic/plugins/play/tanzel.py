@@ -12,7 +12,7 @@ async def download_song(c,msg):
     return await msg.edit(f'<b> يرجي كتابة {msg.text} + اسم الاغنية</b>')
   else:
     name = msg.text.split(' ',1)[1]
-    x = await msg.reply(f'<b> جاري البحث عن {name}</b>')
+    x = await msg.reply(f'<b> جاري البحث انتظر قليلا </b>')
     ydl_opts = {"format": "bestaudio[ext=m4a]"} if msg.text.split()[0] == 'نزل' else {"format": "best","keepvideo": True,"prefer_ffmpeg": False,"geo_bypass": True,"outtmpl": "%(title)s.%(ext)s","quite": True}
     try:
       results = YoutubeSearch(name,max_results=1).to_dict()
@@ -30,7 +30,7 @@ async def download_song(c,msg):
       ytdl_data = ytdl.extract_info(link,download=True)
       file_name = ytdl.prepare_filename(ytdl_data)
     
-    rep = f"<b> {title}</b>\n<b> powered by : @MH_BP</b>"
+    rep = f"<b> {title}</b>\n<b> • uploader by : @MH_BP</b>"
     secmul, dur, dur_arr = 1, 0, duration.split(":")
     for i in range(len(dur_arr) - 1, -1, -1):
         dur += int(dur_arr[i]) * secmul
