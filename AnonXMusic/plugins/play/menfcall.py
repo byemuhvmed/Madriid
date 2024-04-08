@@ -31,8 +31,8 @@ async def strcall(client, message):
         await asyncio.sleep(5)
         await assistant.leave_group_call(message.chat.id)
     except NoActiveGroupCall:
-        await message.reply(f"الكول مش شغال ي حبي\n❌")
+        await message.reply(f"الكول مش شغال ي حبي\n")
     except TelegramServerError:
-        await message.reply(f"ارسل الامر تاني في مشكله في السيرفر\n❌")
+        await message.reply(f"ارسل الامر تاني في مشكله في السيرفر\n")
         
  
