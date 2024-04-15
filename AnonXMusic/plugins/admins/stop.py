@@ -10,7 +10,7 @@ from config import BANNED_USERS
 
 
 @app.on_message(
-    filters.command(["end", "stop", "اسكت", "cstop","ايقاف","انهاء"], "") & filters.group & ~BANNED_USERS
+    filters.command(["end", "stop", "اسكت", "cstop","ايقاف","انهاء"], "") & ~filters.private & ~BANNED_USERS 
 )
 @AdminRightsCheck
 async def stop_music(cli, message: Message, _, chat_id):
@@ -19,5 +19,6 @@ async def stop_music(cli, message: Message, _, chat_id):
     await Anony.stop_stream(chat_id)
     await set_loop(chat_id, 0)
     await message.reply_text(
-        _["admin_5"].format(message.from_user.mention), reply_markup=close_markup(_)
+        _["admin_5"].format(message.from_user.mention if message.chat.type != ChatType.CHANNEL else "مشرف القناة"), reply_markup=close_markup(_) 
     )
+    
