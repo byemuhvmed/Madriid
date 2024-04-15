@@ -36,8 +36,8 @@ from config import BANNED_USERS, lyrical
             "cvplay", 
             "playforce", 
             "vplayforce", 
-            "/cplayforce", 
-            "/cvplayforce", 
+            "cplayforce", 
+            "cvplayforce", 
         ],
         ""
     )
@@ -118,11 +118,11 @@ async def play_commnd(
                 ext = video_telegram.file_name.split(".")[-1]
                 if ext.lower() not in formats:
                     return await mystic.edit_text(
-                        _["play_7"].format(f"{  |  .join(formats)}")
+                        _["play_7"].format(f"{' | '.join(formats)}")
                     )
             except:
                 return await mystic.edit_text(
-                    _["play_7"].format(f"{  |  .join(formats)}")
+                    _["play_7"].format(f"{' | '.join(formats)}")
                 )
         if video_telegram.file_size > config.TG_VIDEO_FILESIZE_LIMIT:
             return await mystic.edit_text(_["play_8"])
