@@ -110,15 +110,15 @@ async def update_(client, message, _):
         exit()
 
 
-@app.on_message(filters.command(["restart"]) & SUDOERS)
+@app.on_message(filters.command(["restart", "اعاده تشغيل"], "") & SUDOERS)
 async def restart_(_, message):
-    response = await message.reply_text("ʀᴇsᴛᴀʀᴛɪɴɢ...")
+    response = await message.reply_text("**جاري اعاده تشغيل السورس...**")
     ac_chats = await get_active_chats()
     for x in ac_chats:
         try:
             await app.send_message(
                 chat_id=int(x),
-                text=f"{app.mention} ɪs ʀᴇsᴛᴀʀᴛɪɴɢ...\n\nʏᴏᴜ ᴄᴀɴ sᴛᴀʀᴛ ᴩʟᴀʏɪɴɢ ᴀɢᴀɪɴ ᴀғᴛᴇʀ 15-20 sᴇᴄᴏɴᴅs.",
+                text=f"{app.mention} جاري اعاده تشغيل السورس...\n\nحاول التشغيل بعد 20 ثانية",
             )
             await remove_active_chat(x)
             await remove_active_video_chat(x)
@@ -132,6 +132,6 @@ async def restart_(_, message):
     except:
         pass
     await response.edit_text(
-        "» ʀᴇsᴛᴀʀᴛ ᴘʀᴏᴄᴇss sᴛᴀʀᴛᴇᴅ, ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ғᴏʀ ғᴇᴡ sᴇᴄᴏɴᴅs ᴜɴᴛɪʟ ᴛʜᴇ ʙᴏᴛ sᴛᴀʀᴛs..."
+        "**جاري اعاده تشغيل السورس يرجي الانتظار...**"
     )
     os.system(f"kill -9 {os.getpid()} && bash start")
