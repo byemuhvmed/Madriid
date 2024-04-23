@@ -112,7 +112,7 @@ async def update_(client, message, _):
 
 @app.on_message(filters.command(["restart", "اعاده تشغيل"], "") & SUDOERS)
 async def restart_(_, message):
-    response = await message.reply_text("**جاري اعاده تشغيل السورس...**")
+    response = await message.reply_text("جاري اعاده تشغيل السورس...")
     ac_chats = await get_active_chats()
     for x in ac_chats:
         try:
@@ -132,6 +132,6 @@ async def restart_(_, message):
     except:
         pass
     await response.edit_text(
-        "**جاري اعاده تشغيل السورس يرجي الانتظار...**"
+        "جاري اعاده تشغيل السورس يرجي الانتظار."
     )
     os.system(f"kill -9 {os.getpid()} && bash start")
