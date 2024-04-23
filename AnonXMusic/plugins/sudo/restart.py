@@ -132,6 +132,6 @@ async def restart_(_, message):
     except:
         pass
     await response.edit_text(
-        "تمت اعاده تشغيل السورس يرجي الانتظار."
+        "تتم اعاده تشغيل السورس يرجي الانتظار."
     )
     os.system(f"kill -9 {os.getpid()} && bash start")
