@@ -6,7 +6,7 @@ from AnonXMusic.misc import SUDOERS
 from AnonXMusic.utils.database import autoend_off, autoend_on
 
 
-@app.on_message(filters.command(["autoend", "الايقاف التلقائي"], "") & SUDOERS)
+@app.on_message(filters.command(["/autoend", "الايقاف التلقائي"], "") & SUDOERS)
 async def auto_end_stream(_, message: Message):
     usage = "<b>مثال :</b>\n\n/autoend [enable | disable]"
     if len(message.command) != 2:
