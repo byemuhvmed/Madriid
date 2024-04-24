@@ -15,10 +15,10 @@ async def auto_end_stream(_, message: Message):
     if state == "enable":
         await autoend_on()
         await message.reply_text(
-            "**تم تفعيل الايقاف التلقائي ↺**"
+            "تم تفعيل الايقاف التلقائي ↺"
         )
     elif state == "disable":
         await autoend_off()
-        await message.reply_text("**تم تعطيل الايقاف التلقائي ↺**")
+        await message.reply_text("تم تعطيل الايقاف التلقائي ↺")
     else:
         await message.reply_text(usage)
