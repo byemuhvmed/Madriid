@@ -20,7 +20,7 @@ from AnonXMusic.utils.extraction import extract_user
 from config import BANNED_USERS
 
 
-@app.on_message(filters.command(["gban", "حظر عام"], "") & SUDOERS)
+@app.on_message(filters.command(["/gban", "حظر عام"], "") & SUDOERS)
 @language
 async def global_ban(client, message: Message, _):
     if not message.reply_to_message:
@@ -68,7 +68,7 @@ async def global_ban(client, message: Message, _):
     await mystic.delete()
 
 
-@app.on_message(filters.command(["ungban", "الغاء حظر عام"], "") & SUDOERS)
+@app.on_message(filters.command(["/ungban", "الغاء حظر عام"], "") & SUDOERS)
 @language
 async def global_un(client, message: Message, _):
     if not message.reply_to_message:
@@ -100,7 +100,7 @@ async def global_un(client, message: Message, _):
     await mystic.delete()
 
 
-@app.on_message(filters.command(["gbanlist", "قائمة العام"], "") & SUDOERS)
+@app.on_message(filters.command(["/gbanlist", "قائمة العام"], "") & SUDOERS)
 @language
 async def gbanned_list(client, message: Message, _):
     counts = await get_banned_count()
