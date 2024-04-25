@@ -31,7 +31,7 @@ async def get_group_call(
     await app.send_message(f"**No group call Found** {err_msg}")
     return False
 
-@app.on_message(filters.regex("^افتح المكالمه$"))
+@app.on_message(filters.regex("^افتح المكالمه$" ,"افتح المكالمة" , "افتح الكول"))
 async def start_group_call(c: Client, m: Message):
     chat_id = m.chat.id
     assistant = await get_assistant(chat_id)
@@ -87,7 +87,7 @@ async def start_group_call(c: Client, m: Message):
             can_promote_members=False,
             ),
         )                              
-        await msg.edit_text("تم فتح المكالمه بنجاح ⚡️~!")
+        await msg.edit_text("تم فتح المكالمه بنجاح ⚡")
       except:
          await msg.edit_text("خلي البوت معاه صلاحية اضافة مشرفين والتحكم ف المحادثه الصوتيه او خلي الاك المساعد رول وجرب ⚡")
 @app.on_message(filters.regex("^اقفل المكالمه$"))
@@ -108,7 +108,7 @@ async def stop_group_call(c: Client, m: Message):
         ):  
            return
         await assistant.invoke(DiscardGroupCall(call=group_call))
-        await msg.edit_text("تم اغلاق المكالمه بنجاح ⚡️~!")
+        await msg.edit_text("تم اغلاق المكالمه بنجاح ⚡")
     except Exception as e:
       if "GROUPCALL_FORBIDDEN" in str(e):
        try:    
@@ -141,7 +141,7 @@ async def stop_group_call(c: Client, m: Message):
             can_promote_members=False,
             ),
          )                              
-         await msg.edit_text("تم اغلاق المكالمه بنجاح ⚡️~!")
+         await msg.edit_text("تم اغلاق المكالمه بنجاح ⚡")
        except:
          await msg.edit_text("خلي البوت معاه صلاحية اضافة مشرفين والتحكم ف المحادثه الصوتيه او خلي الاك المساعد عنده صلاحية رفع مشرفين وجرب")
     
