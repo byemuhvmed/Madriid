@@ -30,7 +30,7 @@ def private_panel(_):
             InlineKeyboardButton(text="𓏺 ََِ𝗠𝗔𝗗𝗥𝗜𝗗 ↺", url=config.SUPPORT_CHAT),
         ],
         [
-            InlineKeyboardButton(text="قناه المطور", url=config.SUPPORT_CHANNEL),
+            InlineKeyboardButton(text="𓏺 ََِ𝗠𝗔𝗗𝗥𝗜𝗗 ↺", url=config.SUPPORT_CHANNEL),
         ],
     ]
     return buttons
