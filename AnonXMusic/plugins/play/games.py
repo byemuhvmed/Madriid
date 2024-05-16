@@ -1,5 +1,6 @@
 import asyncio
 from pyrogram import Client, filters
+from strings import get_command
 from strings.filters import command
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery 
 from typing import Union
@@ -301,10 +302,11 @@ async def kaompj(client, message):
   await message.reply_text(f"تم تنزيل العضو\n🗿 \n√ : {message.reply_to_message.from_user.mention}\n\n حرامي ربنا تاب عليه😂😔")
 
 
-@app.on_message(
-    command(["الالعاب","العاب","الالعاب. 🐰"])
-    & ~filters.edited
+@app.on_message(filters.command(["العاب","الالعاب"], "")
 )
+@app.on_message(
+    filters.command( 
+        [ 
 async def zohary(client: Client, message: Message):
     await message.reply_photo(
         photo=f"https://graph.org/file/b3a20ffde6f7e3be1fc2a.jpg",
