@@ -24,5 +24,3 @@ yt-dlp
 youtube-search
 youtube-search-python
 pytz
-sys
-re
