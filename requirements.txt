@@ -24,3 +24,6 @@ yt-dlp
 youtube-search
 youtube-search-python
 pytz
+get_command
+sys
+re
